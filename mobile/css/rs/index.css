@@ -1,0 +1,71 @@
+.rsgl_index{
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+}
+.rdgl_hIcon{
+    width: 100%;
+    height:75%;
+    position: relative;
+}
+.rdgl_hIcon>img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.rdgl_hIcon>.rdgl_cricle{
+    width: 4rem;
+    height: 4rem;
+    border-radius:50%;
+    margin:0 auto;
+    background: url('../../img/rs/cir.png');
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -2rem;
+    margin-left: -2rem;
+}
+.rdgl_hIcon>.rdgl_cricle>h2{
+    width: 100%;
+    padding: 15% 0 0;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 13%;
+    color: #fff;
+}
+.rdgl_hIcon>.rdgl_cricle>span{
+    width: 100%;
+    padding: 0 0 3% 0;
+    font-size: .3rem;
+    text-align: center;
+    display: inline-block;
+    color:#fff;
+}
+
+/* 选择人员类型 */
+.rsgl_index>.rdgl_check{
+    width: 100%;
+    height: 25%;
+    overflow: hidden;
+}
+
+.rsgl_index>.rdgl_check>a{
+    width: 50%;
+    height: 100%;
+    display: block;
+}
+.rsgl_index>.rdgl_check>a>img{
+    width: 30%;
+    margin-left: 36%;
+    margin-top: 20%;
+}
+.rsgl_index>.rdgl_check>a>span{
+    width: 100%;
+    padding: 3% 0;
+    text-align: center;
+    font-size: .24rem;
+    margin-top: 7%;
+    display: inline-block;
+}

@@ -1,0 +1,46 @@
+.usage_cont{
+    width: 100%;
+    overflow: hidden;
+}
+.usage_info{
+    width: 96%;
+    padding: 2%;
+    overflow: hidden;
+    margin-top:10px;
+}
+.cartogram{
+    width: 100%;
+    height: 13rem;
+}
+
+.usage_info>h3{
+    width: 100%;
+    font-size: .7rem;
+    font-weight: normal;
+}
+#usage_uls{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 30px;
+}
+#usage_uls li{
+
+    width: 100%;
+    height: 2rem;
+    display: inline-block;
+    border-bottom: 1px solid #ccc;
+}
+#usage_uls li>.usage_name{
+    font-size: 30px;
+    line-height: 2rem;
+    margin-left: 20px;
+}
+#usage_uls li>.usage_zo{
+    width: 10%;
+    border:1px solid #0E89CE;
+    text-align: center;
+    font-size: 30px;
+    border-radius: 5px;
+    line-height: 36px;
+    margin-top: 30px;
+}

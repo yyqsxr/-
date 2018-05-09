@@ -1,0 +1,80 @@
+.info_cont{
+    width: 100%;
+    overflow: hidden;
+}
+.info_head{
+    width: 100%;
+    height: 2.5rem;
+    background: url('../../img/rs/bb.png') no-repeat;
+    background-size: 100%;
+    overflow: hidden;
+}
+.info_head>div{
+    width: 50%;
+    height: 1.5rem;
+    margin-top: .6rem;
+}
+.info_head>.head_photo>.Head_Portraits{
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: .75rem;
+    overflow: hidden;
+    background: pink;
+    margin-right: .5rem;
+}
+.head_info>h2{
+    font-size: .36rem;
+    font-weight: normal;
+    color: #fff;
+    padding: .05rem 0;
+}
+
+/* 选项卡 */
+.layui-tab .layui-tab-title>li{
+    width: 15%;
+    padding: 0 5% !important;
+    font-size: .14rem !important;
+    min-width: 0 !important;
+}
+.layui-tab-content>.layui-tab-item{
+    width: 90%;
+    padding: 0 5%;
+    overflow: hidden;
+}
+.layui-tab-brief .layui-tab-title .layui-this{
+    color: #0D7BC8 !important;
+}
+.layui-this:after{
+    border-width: 0 !important;
+    border-bottom: 2px solid #0D7BC8 !important;
+}
+#information{
+    width: 100%;
+    overflow: hidden;
+}
+#information>li{
+    width: 100%;
+    padding: 5% 0;
+    overflow: hidden;
+}
+#information>li span{
+    font-size: .12rem;
+}
+#information>li .info_tit{
+    width: 30%;
+}
+#information>li .gwinfo_tit{
+    width: 30%;
+    margin-right: .5rem;
+}
+#endStart{
+    font-size: .3rem;
+}
+#contText{
+    font-size: .14rem;
+}
+
+
+.layui-timeline-axis{
+    top: 2px !important;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="../css/static.css">
+        <link rel="stylesheet" href="../css/zc/listInfo.css">
+        <script type="text/javascript" src="../js/jquery.min.js"></script>
+
+        <script type="text/javascript">
+            function reSize(){
+                var deviceWidth = screen.width;
+                if(deviceWidth>750) deviceWidth = 750;
+                document.documentElement.style.fontSize = deviceWidth/7.5 +'px';
+                // console.log(123)
+            }
+            //加载完毕时动态改变rem
+            reSize();
+            window.addEventListener('resize',function(){
+                reSize();
+            })
+        </script>
+    </head>
+    <body>
+        <div class="lisnum_cont">
+            <ul id="usage_uls">
+                <li>
+                    <span class="fl usage_name">摄像机</span>
+                    <span class="ri usage_zo">128</span>
+                </li>
+                <li>
+                    <span class="fl usage_name">劳斯莱斯</span>
+                    <span class="ri usage_zo">12</span>
+                </li>
+                <div class="deviceZ">
+                    <span class="fl usage_name">数量小计：</span>
+                    <span class="ri usage_zo">12</span>
+                </div>
+            </ul>
+        </div>
+    </body>
+</html>

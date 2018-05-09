@@ -1,0 +1,40 @@
+.appli_cont{
+    width: 100%;
+    overflow: hidden;
+}
+#conf_info{
+    width: 100%;
+    overflow: hidden;
+}
+#conf_info>li{
+    width: 96%;
+    padding: 0 2%;
+    border-bottom: 1px dashed #ccc;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+#conf_info>li>span{
+    padding: .3rem 0;
+    font-size: .24rem;
+}
+#conf_info>li>.in_title{
+    width: 20%;
+    text-align: left;
+    color: #7C7C7C;
+    margin-right: .4rem;
+    /* height: 100%; */
+}
+#conf_info>li>.in_info{
+    width:70%;
+    color: #333;
+    display: inline-block;
+    line-height: .4rem;
+    /* height: 100%; */
+}
+#conf_info>li>.in_info>span{
+    width: 100%;
+    padding: .2rem 0;
+    display: inline-block;
+    font-size: .24rem;
+}

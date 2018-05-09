@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="css/static.css">
+        <link rel="stylesheet" href="css/eventDuty.css">
+        <script src="lib/jquery-2.1.4.js"></script>
+        <script src="lib/static.js"></script>
+    </head>
+    <body>
+        <div class="eventDuty">
+            <div class="event_cont">
+                <p class="event_title">值班事件</p>
+                <input type="text" id="eventDuty" name="" value="" placeholder="请填写值班事件">
+                <p class="event_title">值班内容</p>
+                <textarea id="contentDuty" name="content" placeholder="请填写值班内容">12233112</textarea>
+                <p class="event_title">请选择事项等级</p>
+                <div class="event_grade">
+                    <div class="grade_list fl">
+                        <label>
+                            <input type="radio" name="survey" class="common">
+                            普通
+                        </label>
+                    </div>
+                    <div class="grade_list fl">
+                        <label>
+                            <input type="radio" name="survey" class="significance">
+                            重要
+                        </label>
+                    </div>
+                    <div class="grade_list fl">
+                        <label>
+                            <input type="radio" name="survey" class="urgency">
+                            紧急
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="detail_operation">
+                <div class="operation_list">
+                    <a href="#" class="oper_n fl">取消</a>
+                    <a href="#" class="oper_y ri">保存</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="css/static.css">
+        <link rel="stylesheet" href="css/switched.css">
+        <link rel="stylesheet" href="css/weui.min.css">
+        <link rel="stylesheet" href="css/jquery-weui.css">
+        <script src="lib/jquery-2.1.4.js"></script>
+        <script src="lib/static.js"></script>
+    </head>
+    <body>
+        <div class="switched">
+            <form id="switched" action="www.baidu.com" method="post">
+                <div class="detail_list">
+                    <span class="detailist_tit fl">调班人</span>
+                    <div class="message_nums ri">
+                        <input type="text" name="" value="张三" disabled='disabled' style="width:100%;background:#fff;">
+                    </div>
+                </div>
+                <div class="detail_list">
+                    <span class="detailist_tit fl">原值班时间</span>
+                    <div class="message_nums ri">
+                        <div class="weui-cells weui-cells_form fl">
+                          <div class="weui-cell">
+                            <div class="weui-cell__bd">
+                              <input class="weui-input" id="time-inline" type="text" value="">
+                            </div>
+                          </div>
+                        </div>
+                        <div id="time-container"></div>
+                        <div class="dutyType fl">
+                            <select id="original">
+                                <option value="0">请选择值班类型</option>
+                                <option value="1">白班</option>
+                                <option value="2"> 夜班</option>
+                                <option value="2"> 24班</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail_list">
+                    <span class="detailist_tit fl">预调班时间</span>
+                    <div class="message_nums ri">
+                        <div class="weui-cells weui-cells_form fl">
+                          <div class="weui-cell">
+                            <div class="weui-cell__bd">
+                              <input class="weui-input" id="time-inlines" type="text" value="">
+                            </div>
+                          </div>
+                        </div>
+                        <div id="time-container"></div>
+                        <div class="dutyType fl">
+                            <select id="preset">
+                                <option value="0">请选择值班类型</option>
+                                <option value="1">白班</option>
+                                <option value="2"> 夜班</option>
+                                <option value="2"> 24班</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail_list">
+                    <span class="detailist_tit fl">接班人</span>
+                    <div class="message_nums ri">
+                        <input type="text" name="" value="张四" disabled='disabled' style="width:100%;background:#fff;">
+                    </div>
+                </div>
+                <div class="detail_list">
+                    <span class="detailist_tit fl">调班理由</span>
+                    <div class="message_nums ri">
+                        <input type="text" name="" value="" class="reason" placeholder="请输入调班理由">
+                    </div>
+                </div>
+                <a href="#" onclick="sub()" id="sublimt">提交</a>
+            </form>
+        </div>
+    </body>
+    <script src="lib/fastclick.js"></script>
+    <script src="lib/jquery-weui.js"></script>
+    <script>
+        $(function() {
+            FastClick.attach(document.body);
+            // var time = new Date();
+        	// var y = time.getFullYear();//年
+            // if(time.getMonth() + 1<10){
+            //     var m = '0'+(time.getMonth() + 1);//月
+            // }else{
+            //     var m = time.getMonth() + 1;//月
+            // }
+        	// var d = time.getDate();//日
+        	// var h = time.getHours();//hour
+            // if(time.getMinutes()<10){
+            //     var min = '0'+time.getMinutes();//minute
+            // }else{
+            //     var min = time.getMinutes();//minute
+            // }
+            //
+            // $('.weui-input').val(y+"-"+m+"-"+d+' '+h+':'+min);
+        });
+        $("#time-inline").datetimePicker({
+           title: '请选择时间',
+           times: function () {
+          return [
+
+          ];
+        },
+           min: "2018-4-23",
+           max: "2022-12-12",
+           onChange: function (picker, values, displayValues) {
+             console.log(values);
+           }
+        })
+        $("#time-inlines").datetimePicker({
+           title: '请选择时间',
+           min: "2018-4-23",
+           max: "2022-12-12",
+           times: function () {
+          return [
+
+          ];
+        },
+           onChange: function (picker, values, displayValues) {
+             console.log(values);
+           }
+        })
+        function sub(){
+            $('#switched').submit();
+        }
+    </script>
+</html>

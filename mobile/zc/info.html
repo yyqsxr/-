@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> -->
+
+        <link rel="stylesheet" href="../css/zc/info.css">
+        <link rel="stylesheet" href="../css/static.css">
+        <script type="text/javascript" src="../js/jquery.min.js"></script>
+        <script type="text/javascript" src="../js/highcharts/highcharts.js"></script>
+        <script type="text/javascript">
+            function reSize(){
+                var deviceWidth = screen.width;
+                if(deviceWidth>750) deviceWidth = 750;
+                document.documentElement.style.fontSize = deviceWidth/7.5 +'px';
+                // console.log(123)
+            }
+            //加载完毕时动态改变rem
+            reSize();
+            window.addEventListener('resize',function(){
+                reSize();
+            })
+        </script>
+    </head>
+    <body>
+        <div class="info_cont">
+            <!-- 统计图 -->
+            <div class="cartogram">
+                <div id="container" style="min-width:300px; height:100%; margin: 0 auto"></div>
+            </div>
+            <!-- 配置数量 -->
+            <div class="cofig_nums">
+                <div class="config_hinfo">
+                    <div class="conhin_z fl">
+                        <span class="c_box fl"></span>
+                        <span class="c_allnum fl">总数</span>
+                    </div>
+                    <div class="conhin_z fl">
+                        <span class="c_box fl" style="background:pink;"></span>
+                        <span class="c_allnum fl">标配</span>
+                    </div>
+                </div>
+
+                <div id="config_uls">
+                    <ul id="conf_nums">
+                        <a href="./usage.html">
+                            <li>
+                                <div class="configli_le fl">
+                                    <span class="config_icon">支</span>
+                                    <span class="config_name">支队机关</span>
+                                </div>
+                                <div class="configli_ri fl">
+                                    <span class="config_zo">126</span>
+                                    <span class="config_bi">0</span>
+                                </div>
+                            </li>
+                        </a>
+
+                        <a href="./usage.html">
+                            <li>
+                                <div class="configli_le fl">
+                                    <span class="config_icon fl">车辆</span>
+                                    <span class="config_name fl">车辆书面</span>
+                                </div>
+                                <div class="configli_ri fl">
+                                    <span class="config_zo">3</span>
+                                    <span class="config_bi">0</span>
+                                </div>
+                            </li>
+                        </a>
+                        <a href="./usage.html">
+                            <li>
+                                <div class="configli_le fl">
+                                    <span class="config_icon fl">车辆</span>
+                                    <span class="config_name fl">京东队</span>
+                                </div>
+                                <div class="configli_ri fl">
+                                    <span class="config_zo">3</span>
+                                    <span class="config_bi">0</span>
+                                </div>
+                            </li>
+                        </a>
+                        <a href="./usage.html">
+                            <li>
+                                <div class="configli_le fl">
+                                    <span class="config_icon fl">车辆</span>
+                                    <span class="config_name fl">天猫支队</span>
+                                </div>
+                                <div class="configli_ri fl">
+                                    <span class="config_zo">3</span>
+                                    <span class="config_bi">0</span>
+                                </div>
+                            </li>
+                        </a>
+                        <a href="./usage.html">
+                            <li>
+                                <div class="configli_le fl">
+                                    <span class="config_icon fl">车辆</span>
+                                    <span class="config_name fl">天猫支队</span>
+                                </div>
+                                <div class="configli_ri fl">
+                                    <span class="config_zo">3</span>
+                                    <span class="config_bi">0</span>
+                                </div>
+                            </li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        window.onload = function(){
+            // 初始化统计图
+            $('#container').highcharts({
+                chart: {
+                    type: 'area'
+                },
+                title: {
+                    text: '总数：100'
+                },
+                credits: {
+                    enabled: false
+                },
+                yAxis: {
+                    title: {
+                        text: ''
+                    },
+                    labels: {
+                        style: {
+                            fontSize: '22px',
+                            fontFamily: 'Microsoft YaHei'
+                        }
+                    }
+                },
+                xAxis: {
+                    title: {
+                        text: ''
+                    },
+                    labels: {
+                        style: {
+                            fontSize: '22px',
+                            fontFamily: 'Microsoft YaHei'
+                        }
+                    },
+                    showEmpty: true,
+                    visible: false
+                },
+                legend: {
+                    layout: 'vertical',
+                    align: 'center',
+                    floating: true,
+                    y: 100,
+                    squareSymbol: true
+                },
+                tooltip: {
+                    style: {
+                        fontSize: 26,
+                        padding:10
+                    }
+                },
+                // plotOptions: {
+                //     series: {
+                //         label: {
+                //             connectorAllowed: false
+                //         },
+                //         pointStart: 2010
+                //     }
+                // },
+                series: [
+                    {
+                        data:[4, 30, 57, 69, 97, 11, 13, 15],
+                        color:'#0E89CE'
+                    }
+                    // },{
+                    //     data:[4, 30, 57, 69, 97, 11, 13, 15],
+                    //     color:'#0E89CE'
+                    // }
+                ],
+                responsive: {
+                    rules: [{
+                        condition: {
+                            maxWidth: 500
+                        },
+                        chartOptions: {
+                            legend: {
+                                layout: 'horizontal',
+                                align: 'center',
+                                verticalAlign: 'bottom'
+                            }
+                        }
+                    }]
+                }
+            });
+
+            //改变背景
+            (function(){
+                for(var i=0;i<$('#conf_nums').children('a').length;i++){
+                    if( i%4==0){
+					  	$('#conf_nums').children('a').eq(i).find('.config_icon').css('background','blue');
+                        var thtml = $('#conf_nums').children('a').eq(i).find('.config_name').text();
+                        var nstr = thtml.substring(0,$('#conf_nums').children('a').eq(i).find('.config_name').text().length-2);
+                        $('#conf_nums').children('a').eq(i).find('.config_icon').text(nstr);
+					}else if ( i%4==1) {
+						$('#conf_nums').children('a').eq(i).find('.config_icon').css('background','yellow');
+                        var thtml = $('#conf_nums').children('a').eq(i).find('.config_name').text();
+                        var nstr = thtml.substring(0,$('#conf_nums').children('a').eq(i).find('.config_name').text().length-2);
+                        $('#conf_nums').children('a').eq(i).find('.config_icon').text(nstr);
+					}else if (i%4==3) {
+						$('#conf_nums').children('a').eq(i).find('.config_icon').css('background','green');
+                        var thtml = $('#conf_nums').children('a').eq(i).find('.config_name').text();
+                        var nstr = thtml.substring(0,$('#conf_nums').children('a').eq(i).find('.config_name').text().length-2);
+                        $('#conf_nums').children('a').eq(i).find('.config_icon').text(nstr);
+					}else {
+						$('#conf_nums').children('a').eq(i).find('.config_icon').css('background','pink');
+                        var thtml = $('#conf_nums').children('a').eq(i).find('.config_name').text();
+                        var nstr = thtml.substring(0,$('#conf_nums').children('a').eq(i).find('.config_name').text().length-2);
+                        $('#conf_nums').children('a').eq(i).find('.config_icon').text(nstr);
+					}
+                }
+            })()
+        }
+    </script>
+</html>

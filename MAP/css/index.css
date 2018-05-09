@@ -1,0 +1,15 @@
+#protection{
+	overflow: hidden;
+	display: flex;
+	justify-content: space-around;
+}
+#protection>.pro_box{
+	width: 506px;
+	height: 462px;
+	overflow: hidden;
+	border:1px solid #ccc;
+}
+#protection>.pro_box>#map_cont{
+	width: 100%;
+	height: 500px;
+}

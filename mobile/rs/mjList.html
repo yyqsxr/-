@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+        <link rel="stylesheet" href="../css/static.css">
+        <link rel="stylesheet" href="../css/rs/mjList.css">
+        <link rel="stylesheet" href="../layer_mobile/need/layer.css">
+        <!-- <link rel="stylesheet" href="../layui/css/layui.css"> -->
+        <script type="text/javascript" src="../js/jquery.min.js"></script>
+        <!-- <script type="text/javascript" src="../js/layer/layer.js"></script> -->
+        <!-- <script type="text/javascript" src="../layui/layui.js"></script> -->
+        <script type="text/javascript" src="../layer_mobile/layer.js"></script>
+    </head>
+    <body>
+        <div class="mjLis_cont">
+            <!-- 搜索 -->
+            <div class="lis_search">
+                <input class="seach_txt fl" type="text" name="search" value="" placeholder="请输入姓名或警号或人员简拼">
+                <span class="seach_icon ri" onclick="search()"></span>
+            </div>
+
+            <!-- 人员列表 -->
+            <div id="person_lis">
+                <ul id="persom_uls" style="height:3000px;">
+                    <li>
+                        <a href="./perInfo.html" class="fl">
+                            <img class="sun_icon fl" src="../img/rs/icoitem.png">
+                            <div class="sun_info fl">
+                                <div class="info_up">
+                                    <h2 class="info_name fl">本拉登</h2>
+                                    <span class="info_dui fl">三大队-刺客</span>
+                                </div>
+                                <div class="info_down">身份证号：1400000000000000000</div>
+                            </div>
+                        </a>
+                        <!-- 电话 -->
+                        <div class="sun_tel ri" onclick="callTel()">
+                            <span class="tel_icon">
+                                <img src="../img/rs/tel.png" alt="" width="95%">
+                            </span>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="./perInfo.html" class="fl">
+                            <img class="sun_icon fl" src="../img/rs/icoitem.png">
+                            <div class="sun_info fl">
+                                <div class="info_up">
+                                    <h2 class="info_name fl">本拉登</h2>
+                                    <span class="info_dui fl">三大队-刺客</span>
+                                </div>
+                                <div class="info_down">身份证号：1400000000000000000</div>
+                            </div>
+                        </a>
+                        <!-- 电话 -->
+                        <div class="sun_tel ri" onclick="callTel()">
+                            <span class="tel_icon">
+                                <img src="../img/rs/tel.png" alt="" width="95%">
+                            </span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 返回顶部 -->
+            <div id="backTop" onclick="backTop()"></div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        $(function(){
+            reSize();
+            var html=`<li>
+                <a href="./perInfo.html" class="fl">
+                    <img class="sun_icon fl" src="../img/rs/icoitem.png">
+                    <div class="sun_info fl">
+                        <div class="info_up">
+                            <h2 class="info_name fl">本拉登</h2>
+                            <span class="info_dui fl">三大队-刺客</span>
+                        </div>
+                        <div class="info_down">身份证号：1400000000000000000</div>
+                    </div>
+                </a>
+                <!-- 电话 -->
+                <div class="sun_tel ri" onclick="callTel()">
+                    <span class="tel_icon">
+                        <img src="../img/rs/tel.png" alt="" width="95%">
+                    </span>
+                </div>
+            </li>`
+            $('#persom_uls').append(html)
+        })
+        function reSize(){
+            var deviceWidth = screen.width;
+            if(deviceWidth>750) deviceWidth = 750;
+            document.documentElement.style.fontSize = deviceWidth/7.5 +'px';
+        }
+        window.addEventListener('resize',function(){
+            reSize();
+        });
+        $(document).scroll(function(){
+            var heig = screen.height;
+            if($(this).scrollTop()>=heig-100){
+                $('#backTop').show();
+            }else{
+                $('#backTop').hide();
+            }
+        })
+        function search(){
+            layer.open({
+                content: 'hello layer'
+                ,skin: 'msg'
+
+                ,time: 2 //2秒后自动关闭
+            });
+        }
+        //返回顶部
+        function backTop(){
+            $('html,body').animate({scrollTop:0}, 300);
+        }
+        //弹框
+        function callTel(){
+            layer.open({
+                title:['','background:#0D7BC8;height:1rem'],
+                content: `<div class="tel_module">
+                    <a class="telNumber fl" href="tel:13546462142">移动：13546462142</a>
+                    <span class="tel_icon ri">
+                        <img src="../img/rs/tel.png" alt="" width="100%">
+                    </span>
+                </div>
+                <div class="tel_module" style="">
+                    <a class="telNumber fl" href="tel:13546462142">电信：13546442142</a>
+                    <span class="tel_icon ri">
+                        <img src="../img/rs/tel.png" alt="" width="100%">
+                    </span>
+                </div>
+                <div class="tel_text" style="">请点击相关电话号码进行拨打</div>
+                <img class="center_icon" src="../img/rs/icoitem.png">
+                `
+            });
+        }
+    </script>
+</html>

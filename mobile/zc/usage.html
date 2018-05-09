@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="../css/static.css">
+        <link rel="stylesheet" href="../css/zc/usage.css">
+        <!-- <script type="text/javascript" src="../js/static.js"></script> -->
+        <script type="text/javascript" src="../js/jquery.min.js"></script>
+        <script type="text/javascript" src="../js/highcharts/highcharts.js"></script>
+        <script type="text/javascript">
+            function reSize(){
+                var deviceWidth = screen.width;
+                if(deviceWidth>750) deviceWidth = 750;
+                document.documentElement.style.fontSize = deviceWidth/7.5 +'px';
+                console.log(123)
+            }
+            //加载完毕时动态改变rem
+            reSize();
+            window.addEventListener('resize',function(){
+                reSize();
+            })
+        </script>
+    </head>
+    <body>
+        <div class="usage_cont">
+            <!-- 统计图 -->
+            <div class="cartogram">
+                <div id="container" style="min-width:300px; height: 100%; margin: 0 auto"></div>
+            </div>
+            <!-- 明细 -->
+            <div class="usage_info">
+                <h3>领用人员明细:</h3>
+                <ul id="usage_uls">
+                    <a href="./listInfo.html">
+                        <li>
+                            <span class="fl usage_name">李倩</span>
+                            <span class="ri usage_zo">128</span>
+                        </li>
+                    </a>
+                    <a href="./listInfo.html">
+                        <li>
+                            <span class="fl usage_name">李倩</span>
+                            <span class="ri usage_zo">128</span>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        window.onload = function(){
+            $('#container').highcharts({
+                chart: {
+                    type: 'column'
+                },
+                legend: {
+                    enabled: false
+                },
+                credits: {
+                    enabled: false
+                },
+                title: {
+                    text: '物品使用情况统计图',
+                    align:'center',
+                    style: {'fontSize': '26px', 'font-family': 'Microsoft YaHei'}
+                },
+                subtitle: {
+                    text: '总数：4 标配：0',
+                    align:'center',
+                    style: {'fontSize': '22px', 'font-family': 'Microsoft YaHei'}
+                },
+                xAxis: {
+                    categories: [
+                        '库存',
+                        '领用',
+                        '维修',
+                        '报废'
+                    ],
+                    crosshair: true,
+                    labels: {
+                        style: {
+                            fontSize: '22px',
+                            fontFamily: 'Microsoft YaHei'
+                        }
+                    }
+
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: null
+                    },
+                    labels: {
+                        style: {
+                            fontSize: '22px',
+                            fontFamily: 'Microsoft YaHei'
+                        }
+                    }
+                },
+                tooltip: {
+                    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                    footerFormat: '</table>',
+                    shared: true,
+                    useHTML: true
+                },
+                plotOptions: {
+                    column: {
+                        colorByPoint: true
+                    }
+
+                },
+                series: [{
+                    data: [6,8,7,4]
+                }]
+            })
+        }
+
+
+    </script>
+</html>

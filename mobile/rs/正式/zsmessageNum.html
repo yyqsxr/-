@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+        <link rel="stylesheet" href="../../css/static.css">
+        <link rel="stylesheet" href="../../css/rs/messageNum.css">
+        <link href="../../css/rs/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../layui/css/layui.css">
+        <link rel="stylesheet" type="text/css" href="../../mobiscroll/css/mobiscroll.frame.css" />
+        <link rel="stylesheet" type="text/css" href="../../mobiscroll/css/mobiscroll.frame.android.css" />
+        <link rel="stylesheet" type="text/css" href="../../mobiscroll/css/mobiscroll.frame.android-holo.css" />
+        <link rel="stylesheet" type="text/css" href="../../mobiscroll/css/mobiscroll.scroller.css" />
+        <link rel="stylesheet" type="text/css" href="../../mobiscroll/css/mobiscroll.scroller.android.css" />
+        <link rel="stylesheet" type="text/css" href="../../mobiscroll/css/mobiscroll.scroller.android-holo.css" />
+        <script type="text/javascript" src="../../js/jquery.min.js"></script>
+        <script type="text/javascript" src="../../mobiscroll/js/mobiscroll.core.js"></script>
+        <script type="text/javascript" src="../../mobiscroll/js/mobiscroll.frame.js"></script>
+        <script type="text/javascript" src="../../mobiscroll/js/mobiscroll.scroller.js"></script>
+        <script type="text/javascript" src="../../mobiscroll/js/mobiscroll.util.datetime.js"></script>
+        <script type="text/javascript" src="../../mobiscroll/js/mobiscroll.datetimebase.js"></script>
+        <script type="text/javascript" src="../../mobiscroll/js/mobiscroll.datetime.js"></script>
+        <script type="text/javascript" src="../../mobiscroll/js/mobiscroll.frame.android.js"></script>
+        <script type="text/javascript" src="../../mobiscroll/js/mobiscroll.frame.android-holo.js"></script>
+        <script type="text/javascript" src="../../mobiscroll/js/i18n/mobiscroll.i18n.zh.js"></script>
+        <script type="text/javascript" src="../../js/highcharts/highcharts.js"></script>
+        <script type="text/javascript" src="../../layui/layui.js"></script>
+
+    </head>
+    <body style="background:#f0f3ef;">
+        <div class="mess_cont">
+            <!-- 头部 -->
+            <div class="mess_head">
+                <a href="./particulars.html" class="mess_stics">
+                    <h2 class="fl">133</h2>
+                    <div class="mess_lsry fl">
+                        <span class="lsry_tit ri">单位总人数</span>
+                        <i class="lsry_icon ri"></i>
+                    </div>
+                </a>
+            </div>
+
+            <!-- 统计图 -->
+            <div class="mess_chart">
+                <div class="xxcharts xxcha">
+                    <div id="chart1">
+                    </div>
+                </div>
+
+                <div class="xxcharts">
+                    <div id="chart2">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右侧菜单 -->
+            <div class="right_menu">
+                <div class="nav_head">
+                    <span class="nav_htit fl">筛选</span>
+                    <span class="nav_hicon ri" onclick="clonav(this)"></span>
+                </div>
+                <ul id="accordion" class="accordion " style="overflow-y:scroll">
+            		<li>
+            			<div class="link">所属部门<i class="fa fa-chevron-down"></i></div>
+            			<ul class="submenu layui-row layui-col-space10" style="padding:5%;">
+            				<li class="dui_name layui-col-xs4">
+                                <div class="dui__info" onclick="dtit(this)">
+                                    支队机关
+                                </div>
+                                <span class="checkicon"></span>
+                            </li>
+                            <li class="dui_name layui-col-xs4">
+                                <div class="dui__info" onclick="dtit(this)">
+                                    一大队
+                                </div>
+                                <span class="checkicon"></span>
+                            </li>
+                            <li class="dui_name layui-col-xs4">
+                                <div class="dui__info" onclick="dtit(this)">
+                                    一大队
+                                </div>
+                                <span class="checkicon"></span>
+                            </li>
+                            <li class="dui_name layui-col-xs4">
+                                <div class="dui__info" onclick="dtit(this)">
+                                    一大队
+                                </div>
+                                <span class="checkicon"></span>
+                            </li>
+                            <li class="dui_name layui-col-xs4">
+                                <div class="dui__info" onclick="dtit(this)">
+                                    一大队
+                                </div>
+                                <span class="checkicon"></span>
+                            </li>
+                            <li class="dui_name layui-col-xs4">
+                                <div class="dui__info" onclick="dtit(this)">
+                                    一大队
+                                </div>
+                                <span class="checkicon"></span>
+                            </li>
+                            <li class="dui_name layui-col-xs4">
+                                <div class="dui__info" onclick="dtit(this)">
+                                    十一大队
+                                </div>
+                                <span class="checkicon"></span>
+                            </li>
+
+            			</ul>
+            		</li>
+            		<li>
+            			<div class="link">政治面貌<i class="fa fa-chevron-down"></i></div>
+                        <ul class="submenu layui-row layui-col-space20" style="padding:5%;">
+                            <li class="layui-col-xs6">
+                                <input type="checkbox" name="zgdy" value="zgdy" id="zgdy">
+                                <label for="zgdy">中共党员</label>
+                            </li>
+                            <li class="layui-col-xs6">
+                                <input type="checkbox" name="zgdy1" value="zgdy1" id="zgdy1">
+                                <label for="zgdy1">预备党员</label>
+                            </li>
+                            <li class="layui-col-xs6">
+                                <input type="checkbox" name="zgdy2" value="zgdy2" id="zgdy2">
+                                <label for="zgdy2">共青团员</label>
+                            </li>
+                            <li class="layui-col-xs6">
+                                <input type="checkbox" name="zgdy3" value="zgdy3" id="zgdy3">
+                                <label for="zgdy3">群众</label>
+                            </li>
+            			</ul>
+            		</li>
+            		<li>
+            			<div class="link">出生年份<i class="fa fa-chevron-down"></i></div>
+                        <ul class="submenu" style="padding:5%;">
+                            <div>起始时间：</div>
+                            <input type="text" class="years csrqStr" name="csrqStr"  placeholder="单击选择起始年份" />
+                            <div>结束年份：</div>
+                            <input type="text" class="years csrqEnd" name="csrqEnd"  placeholder="单击选择结束年份" />
+            			</ul>
+            		</li>
+            		<li>
+            			<div class="link">人员性别<i class="fa fa-chevron-down"></i></div>
+                        <ul class="submenu layui-row layui-col-space20" style="padding:5%;">
+                            <li class="layui-col-xs6">
+                                <input type="checkbox" name="男" id="男" value="男" />
+                                <label for="男">男</label>
+                            </li>
+                            <li class="layui-col-xs6">
+                                <input type="checkbox" name="女" id="女" value="女" />
+                                <label for="女">女</label>
+                            </li>
+            			</ul>
+            		</li>
+            		<li>
+            			<div class="link">在职情况<i class="fa fa-chevron-down"></i></div>
+                        <ul class="submenu layui-row layui-col-space20" style="padding:5%;">
+                            <li class="layui-col-xs6">
+                                <input type="checkbox" name="在职" id="在职" value="在职" />
+                                <label for="在职">在职</label>
+                            </li>
+                            <li class="layui-col-xs6">
+                                <input type="checkbox" name="离职" id="离职" value="离职" />
+                                <label for="离职">离职</label>
+                            </li>
+            			</ul>
+            		</li>
+                    <li>
+                        <div class="link">职级级别<i class="fa fa-chevron-down"></i></div>
+                        <ul class="submenu layui-row layui-col-space20" style="padding:5%;">
+                            <li class="layui-col-xs6">
+                                <input type="checkbox" name="正处职" id="正处职" value="正处职" />
+                                <label for="正处职">正处职</label>
+                            </li>
+                            <li class="layui-col-xs6">
+                                <input type="checkbox" name="正处级" id="正处级" value="正处级" />
+                                <label for="正处级">正处级</label>
+                            </li>
+                            <li class="layui-col-xs6">
+                                <input type="checkbox" name="副处职" id="副处职" value="副处职" />
+                                <label for="副处职">副处职</label>
+                            </li>
+                            <li class="layui-col-xs6">
+                                <input type="checkbox" name="副处级" id="副处级" value="副处级" />
+                                <label for="副处级">副处级</label>
+                            </li>
+            			</ul>
+                    </li>
+                    <li>
+                        <div class="link">入警时间<i class="fa fa-chevron-down"></i></div>
+                        <ul class="submenu" style="padding:5%;">
+                            <div>起始时间：</div>
+                            <input type="text" class="years csrqStr" name="csrqStr"  placeholder="单击选择起始时间" />
+                            <div>结束时间：</div>
+                            <input type="text" class="years csrqEnd" name="csrqEnd"  placeholder="单击选择结束时间" />
+            			</ul>
+                    </li>
+            		<li>
+            			<div class="link">学历教育<i class="fa fa-chevron-down"></i></div>
+                        <ul class="submenu layui-row layui-col-space20" style="padding:5%;">
+                            <li class="layui-col-xs6">
+                                <input type="checkbox" name="yjs" value="yjs" id="yjs">
+                                <label for="yjs">研究生</label>
+                            </li>
+                            <li class="layui-col-xs6">
+                                <input type="checkbox" name="bk" value="bk" id="bk">
+                                <label for="bk">本科</label>
+                            </li>
+                            <li class="layui-col-xs6">
+                                <input type="checkbox" name="zk" value="zk" id="zk">
+                                <label for="zk">专科</label>
+                            </li>
+                            <li class="layui-col-xs6">
+                                <input type="checkbox" name="secondary" value="secondary" id="secondary">
+                                <label for="secondary">中专</label>
+                            </li>
+            			</ul>
+            		</li>
+                    <li>
+                        <div class="link">警衔级别<i class="fa fa-chevron-down"></i></div>
+                        <ul class="submenu layui-row layui-col-space20" style="padding:5%;">
+                            <li class="layui-col-xs6">
+                                <input type="checkbox" name="三级警司" value="三级警司" id="三级警司">
+                                <label for="三级警司">三级警司</label>
+                            </li>
+                            <li class="layui-col-xs6">
+                                <input type="checkbox" name="二级警司" value="二级警司" id="二级警司">
+                                <label for="二级警司">二级警司</label>
+                            </li>
+                            <li class="layui-col-xs6">
+                                <input type="checkbox" name="一级警司" value="一级警司" id="一级警司">
+                                <label for="一级警司">一级警司</label>
+                            </li>
+                            <li class="layui-col-xs6">
+                                <input type="checkbox" name="三级警督" value="三级警督" id="三级警督">
+                                <label for="三级警督">三级警督</label>
+                            </li>
+            			</ul>
+                    </li>
+                    <li>
+                        <div class="link">执法等级<i class="fa fa-chevron-down"></i></div>
+                        <ul class="submenu layui-row layui-col-space20" style="padding:5%;">
+                            <li class="layui-col-xs6">
+                                <input type="checkbox" name="高级" value="高级" id="高级">
+                                <label for="高级">高级</label>
+                            </li>
+                            <li class="layui-col-xs6">
+                                <input type="checkbox" name="中级" value="中级" id="中级">
+                                <label for="中级">中级</label>
+                            </li>
+                            <li class="layui-col-xs6">
+                                <input type="checkbox" name="初级" value="初级" id="初级">
+                                <label for="初级">初级</label>
+                            </li>
+                            <li class="layui-col-xs6">
+                                <input type="checkbox" name="无等级" value="无等级" id="无等级">
+                                <label for="无等级">无等级</label>
+                            </li>
+            			</ul>
+                    </li>
+                    <li>
+                        <div class="link">事故等级<i class="fa fa-chevron-down"></i></div>
+                        <ul class="submenu layui-row layui-col-space20" style="padding:5%;">
+                            <li class="layui-col-xs6">
+                                <input type="checkbox" name="事故高级" value="事故高级" id="事故高级">
+                                <label for="事故高级">事故高级</label>
+                            </li>
+                            <li class="layui-col-xs6">
+                                <input type="checkbox" name="事故中级" value="事故中级" id="事故中级">
+                                <label for="事故中级">事故中级</label>
+                            </li>
+                            <li class="layui-col-xs6">
+                                <input type="checkbox" name="事故初级" value="事故初级" id="事故初级">
+                                <label for="事故初级">事故初级</label>
+                            </li>
+                            <li class="layui-col-xs6">
+                                <input type="checkbox" name="事故无等级" value="事故无等级" id="事故无等级">
+                                <label for="事故无等级">事故无等级</label>
+                            </li>
+            			</ul>
+                    </li>
+
+            		<li>
+            			<div class="link">婚姻状况<i class="fa fa-chevron-down"></i></div>
+                        <ul class="submenu layui-row layui-col-space20" style="padding:5%;">
+                            <li class="layui-col-xs6">
+                                <input type="checkbox" value="已婚" name="已婚" id="已婚"/>
+                                <label for="已婚">已婚</label>
+                            </li>
+                            <li class="layui-col-xs6">
+                                <input type="checkbox" value="未婚" name="未婚" id="未婚"/>
+                                <label for="未婚">未婚</label>
+                            </li>
+                            <li class="layui-col-xs6">
+                                <input type="checkbox" value="离异" name="离异" id="离异"/>
+                                <label for="离异">离异</label>
+                            </li>
+                            <li class="layui-col-xs6">
+                                <input type="checkbox" value="丧偶" name="丧偶" id="丧偶" />
+                                <label for="丧偶">丧偶</label>
+                            </li>
+            			</ul>
+            		</li>
+            	</ul>
+
+                <div class="nav_bottom">
+                    <span class="nav_reset fl" style="background:#179feb;" onclick="clearTxt(this)">重置</span>
+                    <span class="nav_accomplish fl" style="background:#0e89cd;" onclick="checkTxt(this)">完成</span>
+                </div>
+            </div>
+
+            <!-- 筛选结果 -->
+            <div class="screen_end">
+                <div class="scre_list">
+                    <span class="fl">政治面貌：&nbsp;&nbsp;中共党员、预备党员</span>
+                    <span class="ri" style="color:red;" onclick="del(this)">删除</span>
+                </div>
+                <div class="scre_list">
+                    <span class="fl">性别：&nbsp;&nbsp;男、女</span>
+                    <span class="ri" style="color:red;" onclick="del(this)">删除</span>
+                </div>
+
+                <a  class="scre_butt">提交统计条件</a>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        $(function(){
+            //页面加载完改变font-size
+            reSize();
+
+            // 选项卡
+            var Accordion = function(el, multiple) {
+            	this.el = el || {};
+            	this.multiple = multiple || false;
+        		var links = this.el.find('.link');
+        		links.on('click', {el: this.el, multiple: this.multiple}, this.dropdown)
+            }
+
+        	Accordion.prototype.dropdown = function(e) {
+        		var $el = e.data.el;
+        			$this = $(this),
+        			$next = $this.next();
+        		$next.slideToggle();
+        		$this.parent().toggleClass('open');
+        	}
+        	var accordion = new Accordion($('#accordion'), false);
+            $('#accordion').css('height',screen.height-80);
+        })
+        function reSize(){
+            var deviceWidth = screen.width;
+            if(deviceWidth>750) deviceWidth = 750;
+            document.documentElement.style.fontSize = deviceWidth/7.5 +'px';
+        }
+        window.addEventListener('resize',function(){
+            reSize();
+        });
+
+        layui.use('element', function(){
+          var element = layui.element;
+          var form = layui.form;
+        });
+        //选中队
+        function dtit(the){
+            if($(the).hasClass('chetit')){
+                $(the).removeClass('chetit');
+            }else{
+                $(the).addClass('chetit');
+            }
+        }
+        //开始年份
+        $('.csrqStr').mobiscroll().date({
+    		theme: 'android-holo',
+    		lang: 'zh',
+    		showLabel: false,
+    		headerText: '选择开始时间',
+    		rows: 5,
+    		dateFormat: 'yyyy',
+    		dateOrder: 'yy',
+    		endYear:(new Date()).getFullYear(),
+    		defaultValue : new Date('1980')
+    	});
+        //结束年份
+        $('.csrqEnd').mobiscroll().date({
+    		theme: 'android-holo',
+    		lang: 'zh',
+    		showLabel: false,
+    		headerText: '选择结束时间',
+    		rows: 5,
+    		dateFormat: 'yyyy',
+    		dateOrder: 'yy',
+    		endYear: (new Date()).getFullYear(),
+    		defaultValue : new Date('1980')
+    	});
+
+        //关闭右侧菜单
+        function clonav(the){
+            $(the).parents('.right_menu').hide();
+        }
+
+        //重置
+        function clearTxt(the){
+            $(the).parent('.nav_bottom').siblings('#accordion').find("input[type='checkbox']").prop('checked',false);
+            $(the).parent('.nav_bottom').siblings('#accordion').find(".dui__info").removeClass('chetit');
+            $('.csrqStr').val('');
+            $('.csrqEnd').val('');
+
+        }
+        // 完成
+        function checkTxt(the){
+            //所属部门
+            var department = true;
+            //政治面貌
+            var politics = true;
+            //出生年份
+            var birth = true;
+            //人员性别
+            var sex = true;
+            //在职情况
+            var working = true;
+            //职位级别
+            var workjb = true;
+            //入警时间
+            var rjTime = true;
+            //学历教育
+            var education = true;
+            //警衔级别
+            var jxjb = true;
+            // 执法等级
+            var zfdj = true;
+            //事故等级
+            var sgdj = true;
+            //婚姻情况
+            var marital = true;
+            $.each($('.submenu'), function(i, n){
+                if(i==0){
+                    if(!$('.submenu').eq(i).find('.dui__info').hasClass('chetit')){
+                        department = false;
+                    }
+                }else if(i==2){
+                    if($('.submenu').eq(i).find('.years').eq(0).val()=='' && $('.submenu').eq(i).find('.years').eq(1).val()==''){
+                        birth = false;
+                    }else if($('.submenu').eq(i).find('.years').eq(0).val() >= $('.submenu').eq(i).find('.years').eq(1).val()){
+                        birth = true;
+                        layui.use(['layer', 'form'], function() {
+                            var layer = layui.layer, form = layui.form;
+                            layer.msg('人事管理：出生起始年份不能大于出生结束年份',{time:1000});
+                        })
+                        return;
+                    }
+                }else if(i==1){
+                    if(!$('.submenu').eq(i).find('input[type="checkbox"]').is(':checked')){
+                        politics = false;
+                    }
+                }else if(i==3){
+                    if(!$('.submenu').eq(i).find('input[type="checkbox"]').is(':checked')){
+                        sex = false;
+                    }
+                }else if(i==4){
+                    if(!$('.submenu').eq(i).find('input[type="checkbox"]').is(':checked')){
+                        working = false;
+                    }
+                }else if(i==5){
+                    if(!$('.submenu').eq(i).find('input[type="checkbox"]').is(':checked')){
+                        workjb = false;
+                    }
+                }else if(i==6){
+                    if($('.submenu').eq(i).find('.years').eq(0).val()=='' || $('.submenu').eq(i).find('.years').eq(1).val()==''){
+                        rjTime = false;
+                    }else if($('.submenu').eq(i).find('.years').eq(0).val() >= $('.submenu').eq(i).find('.years').eq(1).val()){
+                        rjTime = true;
+                        layui.use(['layer', 'form'], function() {
+                            var layer = layui.layer, form = layui.form;
+                            layer.msg('人事管理：入警时间起始年份不能大于入警时间结束年份',{time:1000});
+                        })
+                        return;
+                    }
+                }else if(i==7){
+                    if(!$('.submenu').eq(i).find('input[type="checkbox"]').is(':checked')){
+                        education = false;
+                    }
+                }else if(i==8){
+                    if(!$('.submenu').eq(i).find('input[type="checkbox"]').is(':checked')){
+                        jxjb = false;
+                    }
+                }else if(i==9){
+                    if(!$('.submenu').eq(i).find('input[type="checkbox"]').is(':checked')){
+                        zfdj = false;
+                    }
+                }else if(i==10){
+                    if(!$('.submenu').eq(i).find('input[type="checkbox"]').is(':checked')){
+                        sgdj = false;
+                    }
+                }
+                else{
+                    if(!$('.submenu').eq(i).find('input[type="checkbox"]').is(':checked')){
+                        marital = false;
+                    }
+                }
+            });
+            if(!department && !workjb && !rjTime && !jxjb && !zfdj && !sgdj && !politics && !sex && !working && !birth && !education && !marital){
+                layui.use(['layer', 'form'], function() {
+                    var layer = layui.layer, form = layui.form;
+                    layer.msg('人事管理：请筛选条件',{time:1000});
+                })
+            }
+        }
+        //删除筛选
+        function del(the){
+            $(the).parent('.scre_list').remove();
+        }
+        $('#chart1').highcharts({
+          chart: {
+            type: 'bar',
+            height: 120,
+            marginLeft:40
+          },
+          colors: ['#00aaee'],
+          credits: {
+            enabled: false
+          },
+          title: {
+            text: ''
+          },
+          subtitle: {
+            text: ''
+          },
+          tooltip: {
+            enabled: false
+          },
+          plotOptions: {
+              bar: {
+                  grouping: false,
+                  shadow: false,
+                  borderWidth: 0
+              },
+              // 统计图点击事件
+              series: {
+                  cursor: 'pointer',
+                  point: {
+                      events: {
+                          click: function () {
+                              window.location.href = "./particulars.html?Category="+this.category+"&value="+this.y
+                          }
+                      }
+                  }
+              }
+          },
+          xAxis: {
+            lineColor: 'white',
+            tickColor: '#ffffff',
+            categories: ['民警', '工人']
+          },
+          yAxis: [{
+             gridLineColor: '#f2f2f2',
+                min: 0,
+                title: {
+                    text: null
+                }
+            }, {
+                title: {
+                    text: null
+                },
+                opposite: true
+            }],
+          legend: {
+            enabled: false
+          },
+          series: [{
+                 name:"总人数",
+                 color: 'rgba(165,170,217,1)',
+                 data: [{'color':'#fff','y':300},
+                     {'color':'#fff','y': 300}]
+             }, {
+                 dataLabels: {
+                     enabled: true
+                 },
+                 color: 'rgba(126,86,134,.9)',
+                 data: [{'color':'#1e98db','y':400},
+                     {'color':'#01b18d','y': 100}]
+             }]
+        });
+
+
+        //统计图
+        $('#chart2').highcharts({
+            chart: {
+                type: 'column',
+                height:160
+            },
+            colors: ['#00aaee'],
+            credits: {
+                enabled: false
+            },
+            title: {
+                text: ''
+            },
+            subtitle: {
+                text: ''
+            },
+            tooltip: {
+                enabled: false
+            },
+            plotOptions: {
+                column : {
+                    borderWidth: 0,
+                    pointWidth: 45
+                },
+                // 统计图点击事件
+                series: {
+                    cursor: 'pointer',
+                    point: {
+                        events: {
+                            click: function () {
+                                window.location.href = "./particulars.html?Category="+this.category+"&value="+this.y
+                            }
+                        }
+                    }
+                }
+            },
+            xAxis: {
+                lineColor: 'white',
+                tickColor: '#ffffff',
+                categories: ['在职','借调','退休']
+            },
+            yAxis: [
+              {  gridLineColor: '#f2f2f2',
+                  min: 0,
+                  title: {
+                      text: null
+                  }
+              }, {
+                  title: {
+                      text: null
+                  },
+                  opposite: true
+            }],
+            legend: {
+                enabled: false
+            },
+            series: [{
+                dataLabels: {
+                    enabled: true
+                },
+                maxPointWidth: 30,
+                data: [
+                    {
+                        color: '#0e89cd',
+                        y: 100
+                    },
+                    {
+                        color: '#01b18d',
+                        y:400
+                    },
+                    {
+                        color: '#01c18e',
+                        y:10
+                    }
+                ]
+            }]
+        });
+    </script>
+</html>

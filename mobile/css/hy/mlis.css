@@ -1,0 +1,32 @@
+.info_cont{
+    width: 100%;
+    overflow: hidden;
+}
+#lis_info{
+    width: 96%;
+    padding: 0 2%;
+    overflow: hidden;
+}
+#lis_info>li{
+    width: 100%;
+    border-bottom: 1px dashed #ccc;
+    overflow: hidden;
+}
+#lis_info>li>span{
+    padding: .3rem 0;
+    font-size: .24rem;
+}
+#lis_info>li>.in_title{
+    width: 20%;
+    text-align: left;
+    color: #7C7C7C;
+    margin-right: .4rem;
+}
+#lis_info>li>.in_info{
+    width:70%;
+    text-align: left;
+    color: #333;
+    display: inline-block;
+    line-height: .4rem;
+    /* height: 100%; */
+}

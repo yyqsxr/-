@@ -1,0 +1,64 @@
+
+.list_dt{
+    background: #fff;
+    color: #333;
+    width: 100%;
+    height: 1.3rem;
+    line-height: 1.5rem;
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    position: relative;
+    border-bottom: 1px solid #ccc;
+}
+.list_dt:hover{
+    background: #fff;
+}
+.list_dt:hover ._after{
+    display: block;
+    width: 3px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #4285F4;
+}
+.open{
+    background: #fff;
+}
+.list_dt_icon{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -10px;
+    display: block;
+    width: .4rem;
+    height: .4rem;
+    background: url("../../img/hy/off.png") no-repeat;
+    background-size: cover;
+}
+.open>.list_dt_icon{
+    background: url("../../img/hy/open.png") no-repeat;
+    background-size: cover;
+}
+.list_dd{
+    display: none;
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+}
+.list_li{
+    background: #F5F5F5;
+    list-style-type: none;
+    color: #333;
+    width: 94%;
+    padding: 0 3%;
+    height: 1rem;
+    line-height: 1rem;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+}
+.list_li>span{
+    font-size: .24rem;
+}

@@ -1,0 +1,148 @@
+
+.prop_cont{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.prop_fixed{
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.2rem;
+
+}
+.setFixed{
+    position:fixed;
+    top:0;
+    background:#fff;
+}
+/* 搜索 */
+.prop_head{
+    width: 98%;
+    height: 25px;
+    overflow: hidden;
+    margin-top: 20px;
+    border:1px solid #ccc;
+    border-radius: 100px;
+    margin: 8px auto 0;
+}
+.prop_head>.zchead_sele{
+    height: 100%;
+    width:15%;
+    border-right:1px solid #ccc;
+}
+.prop_head>.zchead_sele>.head_ifoname{
+    font-size: 12px;
+    width: 70%;
+    text-align: center;
+    display: inline-block;
+    height: 100%;
+    line-height: 25px;
+}
+.prop_head>.zchead_sele>.head_down{
+    width: 4%;
+    padding: 0 5%;
+    overflow: hidden;
+    height: 100%;
+    display: inline-block;
+    background: url(../../img/zc/hdown.png) center no-repeat;
+    background-position-x: -0.071rem;
+}
+.prop_head>.zchead_search{
+    height: 100%;
+    width: 71%;
+    padding: 0 2%;
+    border:none;
+    outline: none;
+    font-size: 12px;
+}
+.prop_head>.zcheasd_sicon{
+    width: 9%;
+    height: 100%;
+    display: inline-block;
+    background: url('../../img/zc/search.png') center no-repeat;
+}
+.fix_sele{
+    width: .8rem;
+    overflow: hidden;
+    position: fixed;
+    background: black;
+    opacity: .7;
+    top:35px;
+    height: .7rem;
+    border-radius: 5px;
+    z-index: 999;
+    display: none;
+}
+.fix_sele>a{
+    width: 90%;
+    line-height:25px;
+    font-size: 18px;
+    color: #fff;
+    padding-left: 10%;
+    display: inline-block;
+}
+
+/* 选项 */
+.prop_onesele{
+    height: 60px;
+    margin-top: 15px;
+    overflow:auto;
+}
+.prop_lis{
+    width: 25%;
+    height: 100%;
+    overflow: hidden;
+}
+.prop_lis>.prop_img{
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+.prop_lis .prop_paic{
+    display: inline-block;
+    width: 30%;
+    height: 30%;
+}
+.prop_lis .prop_tet{
+    width: 100%;
+    height: 40%;
+    line-height:40%;
+    text-align: center;
+    font-size: 12px;
+}
+
+/* 内容 */
+.pcont_lis{
+    width: 96%;
+    overflow: hidden;
+    padding: 0 2%;
+    margin-top: 10px;
+}
+#pcont_nums{
+    width: 100%;
+    overflow: hidden;
+}
+.pcont_lis li{
+    width: 100%;
+    height: 40px;
+    display: inline-block;
+    border-bottom: 1px solid #ccc;
+}
+.pcont_lis li>.device_name{
+    width: 70%;
+    padding: 0 5%;
+    line-height: 40px;
+    display: inline-block;
+    font-size: 12px;
+}
+.pcont_lis li>.device_nums{
+    width:13%;
+    border: 1px solid #0E89CE;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+    margin-top: 7px;
+}

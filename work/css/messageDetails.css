@@ -1,0 +1,53 @@
+.details_cont{
+    width: 100%;
+    overflow: hidden;
+}
+.detail_list{
+    width: 92%;
+    padding: .3rem 4%;
+    overflow: hidden;
+    border-bottom: 1px solid #f5f5f5;
+}
+.detail_list>.detailist_tit{
+    width: 25%;
+    font-size: .24rem;
+    color: #777777;
+}
+.detail_list>.message_nums{
+    width: 75%;
+    font-size: .24rem;
+    overflow: hidden;
+}
+.detail_list>.message_nums>span~span{
+    margin-left: .2rem;
+}
+.detail_operation{
+    width: 100%;
+    padding: .5rem 0;
+    overflow: hidden;
+}
+.detail_operation>.operation_list{
+    width: 50%;
+    height: .8rem;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.detail_operation>.operation_list>a{
+    width: 40%;
+    display:block;
+    margin: 0 auto;
+    text-align: center;
+    font-size: .28rem;
+    line-height: .5rem;
+}
+.detail_operation>.operation_list>.oper_n{
+    border:1px solid #3396FB;
+    color: #3396FB;
+    border-radius: .3rem;
+}
+.detail_operation>.operation_list>.oper_y{
+    border:1px solid #3396FB;
+    background: #3396FB;
+    color: #fff;
+    border-radius: .3rem;
+}

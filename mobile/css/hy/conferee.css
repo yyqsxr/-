@@ -1,0 +1,101 @@
+.confere_cont{
+    width: 100%;
+    overflow: hidden;
+}
+#confer_ul{
+    width: 94%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+#confer_ul>li{
+    width: 100%;
+    border-bottom: 1px dashed #ccc;
+    padding: .2rem 0;
+}
+#confer_ul>li>.conf_type{
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .1rem 0;
+}
+#confer_ul span{
+    font-size: .28rem;
+}
+#confer_ul>li>.conf_type>.types{
+    padding: .05rem .2rem;
+    border-radius: .2rem;
+    background: pink;
+    color: #fff;
+}
+#confer_ul>li>.conf_dele{
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+}
+#confer_ul>li>.conf_dele>span{
+    width: .4rem;
+    height: .4rem;
+    display: inline-block;
+    background: url('../../img/hy/delete.png') no-repeat;
+}
+
+
+
+
+
+
+.boot_tabs{
+    width: 100%;
+    height: 1.2rem;
+    position: fixed;
+    bottom: 0;
+    background: pink;
+    display: flex;
+    justify-content: space-between;
+}
+.boot_tabs>.tab_list{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    width: 33.333%;
+    height:1.2rem;
+}
+.boot_tabs>.tab_list .tab_icon{
+    width: 100%;
+    height: .7rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    margin-top: .1rem;
+}
+.boot_tabs>.tab_list .tab_icon>span{
+    display: block;
+    width: .7rem;
+    height:.7rem;
+}
+.boot_tabs>.tab_list .tab_icon>.subscribe{
+    background: url('../../img/hy/123.jpg') no-repeat;
+}
+.boot_tabs>.tab_list .tab_icon>.index{
+    background: url('../../img/hy/123.jpg') no-repeat;
+}
+.boot_tabs>.tab_list .tab_icon>.my{
+    background: url('../../img/hy/123.jpg') no-repeat;
+}
+
+.boot_tabs>.tabActive .tab_icon>.subscribe{
+    background: url('../../img/hy/open.png') no-repeat;
+}
+.boot_tabs>.tabActive .tab_icon>.index{
+    background: url('../../img/hy/open.png') no-repeat;
+}
+.boot_tabs>.tabActive .tab_icon>.my{
+    background: url('../../img/hy/open.png') no-repeat;
+}
+.tabActive>a>span{
+    color: #3396FB;
+}

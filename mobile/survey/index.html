@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+        <link rel="stylesheet" href="../css/static.css">
+        <link rel="stylesheet" href="../css/survey/index.css">
+        <script type="text/javascript" src="../js/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="suery_conts">
+            <!-- 头 -->
+            <div class="sury_head">
+                <span class="sury_nums">20568</span>
+                <a href="./list.html" class="sury_link">点击查看累积投票</a>
+            </div>
+            <!-- 内容 -->
+            <div class="sur_radio">
+                <div class="sur_txt">
+                    <form class="" action="./list.html" method="post">
+                        <div class="sur_list">
+                            <div class="sur_lisle fl">
+                                <label>
+                                    <input type="radio" name="survey" class="survey">
+                                    较差
+                                </label>
+                            </div>
+                            <div class="sur_lisri fl">
+                                <span></span>
+                            </div>
+                        </div>
+
+                        <div class="sur_list">
+                            <div class="sur_lisle fl">
+                                <label>
+                                    <input type="radio" name="survey" class="survey">
+                                    一般
+                                </label>
+                            </div>
+                            <div class="sur_lisri fl">
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+
+                        <div class="sur_list">
+                            <div class="sur_lisle fl">
+                                <label>
+                                    <input type="radio" name="survey" class="survey" value="良好">
+                                    良好
+                                </label>
+
+                            </div>
+                            <div class="sur_lisri fl">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+
+                        <div class="sur_list">
+                            <div class="sur_lisle fl">
+                                <label>
+                                    <input type="radio" name="survey" class="survey">
+                                    满意
+                                </label>
+                            </div>
+                            <div class="sur_lisri fl">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+
+                        <textarea id="text" name="textarea"></textarea>
+                        <button type="button" name="button" id="vote">投票</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        $(function(){
+            //页面加载完改变font-size
+            reSize();
+            $('.suery_conts').css('height',screen.height);
+            $('#text').html('请填写您的宝贵意见').css({'text-align':'center','line-height':$('#text').height()+'px','font-size':12+'px','color':'#3295FA','font-weight':'bold'});
+            $('#text').focus(function(event) {
+                $('#text').css({'text-align':'left','line-height':16+'px','color':'#333','font-weight':'normal'}).html('');
+            });
+        })
+        function reSize(){
+            var deviceWidth = screen.width;
+            if(deviceWidth>750) deviceWidth = 750;
+            document.documentElement.style.fontSize = deviceWidth/7.5 +'px';
+        }
+        window.addEventListener('resize',function(){
+            reSize();
+        });
+    </script>
+</html>

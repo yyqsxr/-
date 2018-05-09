@@ -1,0 +1,129 @@
+.eventDuty{
+    width: 100%;
+    overflow: hidden;
+}
+.event_cont{
+    width: 94%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.event_cont>.event_title{
+    padding: .2rem 0;
+    font-size: .28rem;
+}
+#eventDuty{
+    border:none;
+    border-bottom: 1px dashed #ccc;
+    font-size: .24rem;
+    width: 100%;
+    padding: .2rem 0;
+    outline: inherit;
+    word-wrap:break-word;
+}
+#contentDuty{
+    border:none;
+    border-bottom: 1px dashed #ccc;
+    font-size: .24rem;
+    width: 100%;
+    padding: .2rem 0;
+    outline: inherit;
+    word-wrap:break-word;
+}
+.event_grade{
+    width: 100%;
+    padding: .2rem 0;
+    border-bottom:1px dashed #f3f3f3;
+    overflow: hidden;
+}
+.grade_list{
+    width: 33%;
+    overflow: hidden;
+}
+
+.event_grade>.grade_list{
+    width: 30%;
+    overflow: hidden;
+    font-size: 12px;
+    font-weight: bold;
+}
+.event_grade>.grade_list>label{
+    line-height: 20px !important;
+}
+.event_grade>.grade_list>label>input{
+    line-height: 18px !important;
+}
+.sur_list>.sur_lisri{
+    width: 70%;
+    overflow: hidden;
+    height: .4rem;
+}
+
+input[type="radio"]{
+  -webkit-appearance: none;
+  outline: none;
+}
+input[type="radio"]{
+  position: relative;
+  width: .3rem;
+  height: .3rem;
+  border: 1px solid #ccc;
+  border-radius: .15rem;
+  -webkit-border-radius: .15rem;
+  -moz-border-radius:.15rem;
+  vertical-align: middle;
+  background: white;
+  margin-right: 0.1rem;
+}
+
+input[type="radio"]:checked:after {
+  content: '';
+  position: absolute;
+  left: .04rem;
+  top: .03rem;
+  width: .18rem;
+  height: .18rem;
+  background-color: #4BA3FD;
+  border-radius: .09rem;
+  -webkit-border-radius: .09rem;
+  -moz-border-radius:.09rem;
+}
+.significance:checked:after{
+    background-color: #24C381 !important;
+}
+.urgency:checked:after{
+    background-color: #FF9C00 !important;
+}
+input[type="radio"]:checked {
+  background-color: #fff;
+}
+
+.detail_operation{
+    width: 100%;
+    padding: .5rem 0;
+    overflow: hidden;
+}
+.detail_operation>.operation_list{
+    width: 50%;
+    height: .8rem;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.detail_operation>.operation_list>a{
+    width: 40%;
+    display:block;
+    margin: 0 auto;
+    text-align: center;
+    font-size: .28rem;
+    line-height: .5rem;
+}
+.detail_operation>.operation_list>.oper_n{
+    border:1px solid #3396FB;
+    color: #3396FB;
+    border-radius: .3rem;
+}
+.detail_operation>.operation_list>.oper_y{
+    border:1px solid #3396FB;
+    background: #3396FB;
+    color: #fff;
+    border-radius: .3rem;
+}

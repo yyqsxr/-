@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+        <link rel="stylesheet" href="../css/static.css">
+        <link rel="stylesheet" href="../css/survey/info.css">
+        <script type="text/javascript" src="../js/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="info_cont">
+            <ul id="info_uls">
+                <li class="info_list">
+                    <div class="list_up">
+                        <div class="person_icon fl">
+                            <img src="../img/survey/qwer.jpg" alt="">
+                        </div>
+                        <div class="per_tou fl">
+                            <p class="per_name">列空气</p>
+                            <div class="per_info">
+                                <span class="fl" >投了</span>
+                                <b  class="fl" style="font-size:16px;">一般</b>
+                                <img class="fl"  style="height:20px;display:inline-block;margin-top:.05rem;margin-left:.2rem;" src="../img/survey/yiban.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="list_down">
+                        <div class="list_mmunb ri">
+                            的撒娇打开花洒健康带回家卡萨丁看你撒把车开进不进开心在草地上
+                        </div>
+                    </div>
+                </li>
+                <li class="info_list">
+                    <div class="list_up">
+                        <div class="person_icon fl">
+                            <img src="../img/survey/qwer.jpg" alt="">
+                        </div>
+                        <div class="per_tou fl">
+                            <p class="per_name">列空气</p>
+                            <div class="per_info">    fdgfdgfdgfdgfdgfd
+                                <span class="fl">投了</span>
+                                <b class="fl" style="font-size:16px;">较好</b>
+                                <img class="fl"  style="height:20px;display:inline-block;margin-top:.05rem;margin-left:.2rem;" src="../img/survey/jiaohao.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="list_down">
+                        <div class="list_mmunb ri">
+                            的撒娇打开花洒健康带回家卡萨丁看你撒把车开进不进开心在草地上
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </body>
+    <script type="text/javascript">
+        $(function(){
+            //页面加载完改变font-size
+            reSize();
+            console.log('页面可视区域的高度'+$(window).height());
+            //            alert($(document).scrollTop());
+            console.log('页面的总高度'+$(document.body).height());
+        })
+        function reSize(){
+            var deviceWidth = screen.width;
+            if(deviceWidth>750) deviceWidth = 750;
+            document.documentElement.style.fontSize = deviceWidth/7.5 +'px';
+        }
+        window.addEventListener('resize',function(){
+            reSize();
+        });
+
+    </script>
+</html>

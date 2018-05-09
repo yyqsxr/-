@@ -1,0 +1,39 @@
+.conf_cont{
+    width: 100%;
+    overflow: hidden;
+}
+#conf_info{
+    width: 100%;
+    overflow: hidden;
+}
+#conf_info>li{
+    width: 96%;
+    padding: 0 2%;
+    border-bottom: 1px dashed #ccc;
+    overflow: hidden;
+}
+#conf_info>h3{
+    width: 100%;
+    font-size: .28rem;
+    padding: .2rem 2%;
+    background: #F2F2F2;
+}
+#conf_info>li>span{
+    padding: .3rem 0;
+    font-size: .24rem;
+}
+#conf_info>li>.in_title{
+    width: 20%;
+    text-align: left;
+    color: #7C7C7C;
+    margin-right: .4rem;
+    /* height: 100%; */
+}
+#conf_info>li>.in_info{
+    width:70%;
+    text-align: left;
+    color: #333;
+    display: inline-block;
+    line-height: .4rem;
+    /* height: 100%; */
+}

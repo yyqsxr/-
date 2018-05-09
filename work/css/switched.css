@@ -1,0 +1,114 @@
+.switched{
+    width: 100%;
+    overflow: hidden;
+}
+.detail_list{
+    width: 92%;
+    padding: .3rem 4%;
+    overflow: hidden;
+    border-bottom: 1px solid #f5f5f5;
+}
+.detail_list>.detailist_tit{
+    width: 25%;
+    font-size: .24rem;
+    color: #777777;
+}
+.detail_list>.message_nums{
+    width: 75%;
+    font-size: .24rem;
+    overflow: hidden;
+}
+.detail_list>.message_nums>.watchHour{
+    color: #6EB4FD;
+    width: 50%;
+    outline: inherit;
+}
+.detail_list>.message_nums>.dutyType{
+    color: #3596FA;
+    width: 50%;
+    height: .4rem;
+    border-radius: .1rem;
+    /* box-shadow: 0 0 .1rem #ccc; */
+    position: relative;
+}
+.detail_list>.message_nums>.dutyType>select{
+    color: #3596FA;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: .4rem;
+    text-align: center;
+    font-size: .24rem;
+    padding-left: .3rem;
+    line-height: .4rem;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: #fff;
+}
+.dutyType:after{
+    content: "";
+    width: .28rem;
+    height: .16rem;
+    background: url('../images/select.png') no-repeat center;
+    position: absolute;
+    right: .1rem;
+    top: 27%;
+    pointer-events: none;
+}
+.detail_list .reason{
+    width: 100%;
+    border:none;
+    font-size: .24rem;
+    outline: inherit;
+}
+#sublimt{
+    margin: .5rem auto 0;
+    display: block;
+    width: 25%;
+    padding: .1rem 0;
+    text-align: center;
+    color: #fff;
+    font-size: .28rem;
+    background: #3396FB;
+    border-radius:.3rem;
+}
+.weui-picker-modal{
+    height: 5.5rem !important;
+}
+.toolbar .picker-button{
+    font-size: .32rem !important;
+    height: 1rem !important;
+    line-height: 1rem !important;
+}
+.toolbar .title{
+    font-size: .32rem !important;
+    line-height: 1rem !important;
+}
+.toolbar .toolbar-inner{
+    height: 1rem !important;
+}
+.weui-picker-modal .picker-items{
+    font-size: .36rem !important;
+}
+.weui-cells{
+    margin-top: 0 !important;
+    width: 50%;
+    font-size: .24rem !important;
+}
+.weui-cells:before{
+    border-top:none !important;
+}
+.weui-cells:after{
+    border-bottom:none !important;
+}
+.weui-input{
+    font-size: .24rem !important;
+    color: #3596FA !important;
+}
+.weui-cell{
+    padding: 0 !important;
+}
+.weui-picker-modal .picker-modal-inner{
+    height: 4.5rem !important;
+}

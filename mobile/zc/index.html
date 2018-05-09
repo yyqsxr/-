@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>资产</title>
+        <link rel="stylesheet" href="../css/zc/propIndex.css">
+        <link rel="stylesheet" href="../css/static.css">
+        <link rel="stylesheet" href="../css/swiper-4.1.6.min.css">
+        <script type="text/javascript" src="../js/jquery.min.js"></script>
+        <script type="text/javascript" src="../js/static.js"></script>
+        <script type="text/javascript" src="../js/swiper-4.1.6.min.js"></script>
+        <script type="text/javascript">
+            function reSize(){
+                var deviceWidth = screen.width;
+                if(deviceWidth>750) deviceWidth = 750;
+                document.documentElement.style.fontSize = deviceWidth/7.5 +'px';
+            }
+            //加载完毕时动态改变rem
+            reSize();
+            window.addEventListener('resize',function(){
+                reSize();
+            })
+        </script>
+    </head>
+    <body>
+        <div class="prop_cont">
+            <div class="prop_fixed">
+                <!-- 搜索 -->
+                <div class="prop_head">
+                    <div class="fl zchead_sele" onclick="sels()">
+                        <span class="fl head_ifoname">资产</span>
+                        <span class="fl head_down"></span>
+                    </div>
+                    <input class="fl zchead_search"  type="text" name="" value="" placeholder="请输入关键字">
+                    <span class="fl zcheasd_sicon"></span>
+
+                    <div class="fix_sele">
+                        <a href="#" onclick="fix_selis(this)">资产</a>
+                        <a href="#" onclick="fix_selis(this)">人员</a>
+                    </div>
+                </div>
+                <!-- 选项 -->
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="prop_onesele swiper-slide">
+                            <a href="https://www.baidu.com">
+                                <div class="prop_lis fl ">
+
+                                    <div class="prop_img" style="margin-top:5%;">
+                                        <img src="../img/zc/jw.png" class="prop_paic">
+                                    </div>
+                                    <div class="prop_img">
+                                        <span class="prop_tet">警务设备</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="https://www.baidu.com">
+                                <div class="prop_lis fl">
+                                    <div class="prop_img" style="margin-top:5%;">
+                                        <img src="../img/zc/cl.png" class="prop_paic">
+                                    </div>
+                                    <div class="prop_img">
+                                        <span class="prop_tet">车辆设备</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="#">
+                                <div class="prop_lis fl">
+                                    <div class="prop_img" style="margin-top:5%;">
+                                        <img src="../img/zc/ty.png" class="prop_paic">
+                                    </div>
+                                    <div class="prop_img">
+                                        <span class="prop_tet">体育设备</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="#">
+                                <div class="prop_lis fl">
+                                    <div class="prop_img" style="margin-top:5%;">
+                                        <img src="../img/zc/yx.png" class="prop_paic">
+                                    </div>
+                                    <div class="prop_img">
+                                        <span class="prop_tet">音响监控</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                        </div>
+                        <div class="prop_onesele swiper-slide">
+                            <a href="#">
+                                <div class="prop_lis fl">
+                                    <div class="prop_img" style="margin-top:5%;">
+                                        <img src="../img/zc/sh.png" class="prop_paic">
+                                    </div>
+                                    <div class="prop_img">
+                                        <span class="prop_tet">生活设备</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="prop_lis fl">
+                                    <div class="prop_img" style="margin-top:5%;">
+                                        <img src="../img/zc/gd.png" class="prop_paic">
+                                    </div>
+                                    <div class="prop_img">
+                                        <span class="prop_tet">固定设施</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="#">
+                                <div class="prop_lis fl">
+                                    <div class="prop_img" style="margin-top:5%;">
+                                        <img src="../img/zc/qt.png" class="prop_paic">
+                                    </div>
+                                    <div class="prop_img">
+                                        <span class="prop_tet">其它设备</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 内容 -->
+            <div class="pcont_lis">
+                <ul id="pcont_nums">
+                    <a href="./info.html">
+                        <li>
+                            <span class="fl device_name">警务设备</span>
+                            <span class="fl device_nums">186</span>
+                        </li>
+                    </a>
+                    <a href="./info.html">
+                        <li>
+                            <span class="fl device_name">警务设备</span>
+                            <span class="fl device_nums">186</span>
+                        </li>
+                    </a>
+                    <a href="./info.html">
+                        <li>
+                            <span class="fl device_name">警务设备</span>
+                            <span class="fl device_nums">186</span>
+                        </li>
+                    </a>
+                    <a href="./info.html">
+                        <li>
+                            <span class="fl device_name">警务设备</span>
+                            <span class="fl device_nums">186</span>
+                        </li>
+                    </a>
+                    <a href="./info.html">
+                        <li>
+                            <span class="fl device_name">警务设备</span>
+                            <span class="fl device_nums">186</span>
+                        </li>
+                    </a>
+                    <a href="./info.html">
+                        <li>
+                            <span class="fl device_name">警务设备</span>
+                            <span class="fl device_nums">186</span>
+                        </li>
+                    </a>
+                    <a href="./info.html">
+                        <li>
+                            <span class="fl device_name">警务设备</span>
+                            <span class="fl device_nums">186</span>
+                        </li>
+                    </a>
+                    <a href="./info.html">
+                        <li>
+                            <span class="fl device_name">警务设备</span>
+                            <span class="fl device_nums">186</span>
+                        </li>
+                    </a>
+                    <a href="./info.html">
+                        <li>
+                            <span class="fl device_name">警务设备</span>
+                            <span class="fl device_nums">186</span>
+                        </li>
+                    </a>
+                    <a href="./info.html">
+                        <li>
+                            <span class="fl device_name">警务设备</span>
+                            <span class="fl device_nums">186</span>
+                        </li>
+                    </a>
+                    <a href="./info.html">
+                        <li>
+                            <span class="fl device_name">警务设备</span>
+                            <span class="fl device_nums">186</span>
+                        </li>
+                    </a>
+                    <a href="./info.html">
+                        <li>
+                            <span class="fl device_name">警务设备</span>
+                            <span class="fl device_nums">186</span>
+                        </li>
+                    </a>
+                    <a href="./info.html">
+                        <li>
+                            <span class="fl device_name">警务设备</span>
+                            <span class="fl device_nums">186</span>
+                        </li>
+                    </a>
+                    <a href="./info.html">
+                        <li>
+                            <span class="fl device_name">警务设备</span>
+                            <span class="fl device_nums">186</span>
+                        </li>
+                    </a>
+                    <a href="./info.html">
+                        <li>
+                            <span class="fl device_name">警务设备</span>
+                            <span class="fl device_nums">186</span>
+                        </li>
+                    </a>
+                    <a href="./info.html">
+                        <li>
+                            <span class="fl device_name">警务设备</span>
+                            <span class="fl device_nums">186</span>
+                        </li>
+                    </a>
+                    <a href="./info.html">
+                        <li>
+                            <span class="fl device_name">警务设备</span>
+                            <span class="fl device_nums">186</span>
+                        </li>
+                    </a>
+                    <a href="./info.html">
+                        <li>
+                            <span class="fl device_name">警务设备</span>
+                            <span class="fl device_nums">186</span>
+                        </li>
+                    </a>
+                    <a href="./info.html">
+                        <li>
+                            <span class="fl device_name">警务设备</span>
+                            <span class="fl device_nums">186</span>
+                        </li>
+                    </a>
+                    <a href="./info.html">
+                        <li>
+                            <span class="fl device_name">警务设备</span>
+                            <span class="fl device_nums">186</span>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        var swiper = new Swiper('.swiper-container');
+        window.onload = function(){
+            //页面滚动
+            $(document).scroll(function(){
+    			var top = $(document).scrollTop();
+                //获取定位元素的高度
+                var fheight = $('.prop_fixed').height();
+                // 获取页面的高度
+                var zHeight = $('.prop_cont').height();
+                // 获取可是窗口的高度
+                var watch =  $(window).height();
+                // if(watch-100<=)
+                if($(this).height()-30<=$(this).scrollTop()+watch){
+                    console.log('是时候加载数据了')
+                }
+                if(top>=fheight){
+
+                    if(!$('.prop_fixed').hasClass('setFixed')){
+                        $('.prop_fixed').addClass('setFixed');
+                    }
+                    return;
+                }else{
+                    $('.prop_fixed').removeClass('setFixed');
+                }
+    		})
+        }
+
+        function sels(){
+            $('.fix_sele').show();
+        }
+        function fix_selis(the){
+            $('.head_ifoname').html($(the).html());
+            $(the).parent().hide();
+        }
+    </script>
+</html>

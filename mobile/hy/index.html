@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>首页</title>
+        <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+        <script type="text/javascript" src="../js/jquery.min.js"></script>
+        <script type="text/javascript" src="../js/static.js"></script>
+        <script type="text/javascript" src="../js/timebar.js"></script>
+
+        <link rel="stylesheet" href="../css/hy/index.css">
+        <link rel="stylesheet" href="../css/static.css">
+        <link rel="stylesheet" href="../css/hy/ttt.css">
+        <link rel="stylesheet" href="../css/hy/common.css">
+    </head>
+    <body>
+        <div class="meet_cont">
+            <!-- 头部 -->
+            <div class="meet_date" id="calendar">
+            </div>
+            <!-- 内容 -->
+            <div class="meet_list">
+                <dl class="list_dl" style="margin:0;font-size:14px;">
+                    <dt class="list_dt" onclick="show(this)">
+                        <img src="../img/hy/123.jpg" alt="" class="per_iocn fl">
+                        <p class="fl" style="font-weight:bold;line-height:1.3rem;">805党委会议室</p>
+                        <i class="list_dt_icon fl"></i>
+                    </dt>
+                    <dd class="list_dd">
+                        <ul>
+                            <li class="list_li">
+                                <span class="fl" style="margin-right:1rem;">09:10-09:50</span>
+                                <span class="fl">产品组流程梳理</span>
+                                <span class="ri">待审核</span>
+                            </li>
+                            <li class="list_li">
+                                <span class="fl" style="margin-right:1rem;">09:10-09:50</span>
+                                <span class="fl">产品组流程梳理</span>
+                                <span class="ri">待审核</span>
+                            </li>
+                            <li class="list_li">
+                                <span class="fl" style="margin-right:1rem;">09:10-09:50</span>
+                                <span class="fl">产品组流程梳理</span>
+                                <span class="ri">待审核</span>
+                            </li>
+                        </ul>
+                    </dd>
+                        <dt class="list_dt" onclick="show(this)">
+                            <img src="../img/hy/123.jpg" alt="" class="per_iocn fl">
+                            <a href="111">
+                                <p class="fl" style="font-weight:bold;line-height:1.3rem;">805党委会议室</p>
+                            </a>
+
+                            <i class="list_dt_icon fl"></i>
+                        </dt>
+                    <dd class="list_dd">
+                        <ul>
+                            <a href="www.baodu.com">
+                                <li class="list_li">
+                                    <span class="fl" style="margin-right:1rem;">09:10-09:50</span>
+                                    <span class="fl">产品组流程梳理</span>
+                                    <span class="ri">待审核</span>
+                                </li>
+                            </a>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        timebar.init("calendar",null);
+        function show(the){
+            if(!$(the).hasClass('open')){
+                $(the).addClass('open');
+                $(the).next('.list_dd').slideToggle("slow");
+            }else{
+                $(the).removeClass('open');
+                $(the).next('.list_dd').slideToggle("slow");
+            }
+        }
+        window.onload = function(){
+            //页面滚动
+            $(document).scroll(function(){
+    			var top = $(document).scrollTop();
+                //获取定位元素的高度
+                var fheight = $('.prop_fixed').height();
+                // 获取页面的高度
+                var zHeight = $('.prop_cont').height();
+                // 获取可是窗口的高度
+                var watch =  $(window).height();
+                // if(watch-100<=)
+                if($(this).height()-30<=$(this).scrollTop()+watch){
+                    console.log('是时候加载数据了')
+                }
+                if(top>=fheight){
+
+                    if(!$('.prop_fixed').hasClass('setFixed')){
+                        $('.prop_fixed').addClass('setFixed');
+                    }
+                    return;
+                }else{
+                    $('.prop_fixed').removeClass('setFixed');
+                }
+    		})
+        }
+
+    </script>
+</html>

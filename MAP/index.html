@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>多点移动</title>
+	<link rel="stylesheet" href="./css/static.css">
+	<link rel="stylesheet" href="./css/index.css">
+	<link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
+	<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.6&key=2d87578f05b8e2f1af79b1af0f0667c6&plugin=AMap.Autocomplete,AMap.PlaceSearch"></script>
+	 <!-- UI组件库 1.0 -->
+    <script src="http://webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
+    <!-- <script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script> -->
+    <script type="text/javascript" src="./jquery-2.1.4.js"></script>
+
+</head>
+<body>
+	<div id="protection">
+		<div class="pro_box bd_map">
+			<div id="map_cont"></div>
+		</div>
+		<div class="pro_box"></div>
+		<div class="pro_box"></div>
+	</div>
+</body>
+<script>
+	//创建地图
+    var map = new AMap.Map('map_cont', {
+        resizeEnable: true,
+        zoom:11,
+        // center: [112.572135,37.793742]
+    });
+    map.setMapStyle('amap://styles/grey');
+    AMap.plugin(['AMap.ToolBar','AMap.Scale','AMap.OverView'],
+	    function(){
+	        map.addControl(new AMap.ToolBar());
+
+	        map.addControl(new AMap.Scale());
+
+	        map.addControl(new AMap.OverView({isOpen:true}));
+	});
+
+    var provinces = [
+	    {	
+		"name": "武警医院",
+		"center": "112.5778,37.804797",
+		"type": 1,
+		},{
+			"name": "山西大医院",
+			"center": "112.554454,37.77753",
+			"type": 1,
+		},{
+			"name": "山西省人民医院",
+			"center": "112.577628,37.846559",
+			"type": 1,
+		},{
+			"name": "山大一院",
+			"center": "112.555484,37.853065",
+			"type": 1,
+		},{
+			"name": "第二医院",
+			"center": "112.575912,37.878543",
+			"type": 1,
+		},{
+			"name": "山西中医学院附属医院",
+			"center": "112.530078,37.843712",
+			"type": 1,
+		},{
+			"name": "山西省中医院",
+			"center": "112.566747,37.850466",
+			"type": 1,
+		}
+    ];
+
+    for (var i = 0; i < provinces.length; i += 1) {
+		var marker = new AMap.Marker({
+			position: provinces[i].center.split(','),
+			icon:"./yiyuan.png",
+			title: provinces[i].name,
+			map: map
+		});
+		// mark(provinces[i])
+	}
+
+	//饭店
+	var restaurant = [
+	    {	
+		"name": "美轩养生火锅",
+		"center": "112.569579,37.792276",
+		"type": 1,
+		},{
+			"name": "六味斋",
+			"center": "112.563614,37.794023",
+			"type": 1,
+		},{
+			"name": "顺溜削面",
+			"center": "112.562069,37.810045",
+			"type": 1,
+		},{
+			"name": "重庆孔亮火锅",
+			"center": "112.560395,37.81691",
+			"type": 1,
+		},{
+			"name": "晋韵楼",
+			"center": "112.564623,37.820945",
+			"type": 1,
+		},{
+			"name": "粥天粥地",
+			"center": "112.565717,37.830911",
+			"type": 1,
+		},{
+			"name": "79号自助涮烤城",
+			"center": "112.560717,37.834876",
+			"type": 1,
+		},{
+			"name": "长泰饭店",
+			"center": "112.580201,37.859767",
+			"type": 1,
+		}
+    ];
+    for (var i = 0; i < restaurant.length; i += 1) {
+		var marker = new AMap.Marker({
+			position: restaurant[i].center.split(','),
+			icon:"./fandian.png",
+			title: restaurant[i].name,
+			map: map
+		});
+		// mark(provinces[i])
+	}
+
+
+// AMap.Polyline （折线）
+
+// var pointList=[
+// 	{
+// 		lng:112.58035,
+// 		lat:37.780245
+// 	},
+// 	{
+// 		lng:112.58049,
+// 		lat:37.777192
+// 	},
+
+// 	{
+// 		lng:112.577872,
+// 		lat:37.777209
+// 	},
+// 	{
+// 		lng:112.577668,
+// 		lat:37.788478
+// 	},
+// 	{
+// 		lng:112.569396,
+// 		lat:37.78847
+// 	},
+// 	{
+// 		lng:112.569364,
+// 		lat:37.793731
+// 	},
+// 	{
+// 		lng:112.548046,
+// 		lat:37.793858
+// 	},
+// 	{
+// 		lng:112.548743,
+// 		lat:37.802115
+// 	},
+// 	{
+// 		lng:112.547702,
+// 		lat:37.802153
+// 	},
+// 	{
+// 		lng:112.547708,
+// 		lat:37.80242
+// 	},
+// 	{
+// 		lng:112.547879,
+// 		lat:37.802412
+// 	}
+// ];
+        
+
+// var a_mark;    //图标点
+// var marker;  
+// var lineArr;
+// //地图图块加载完毕后执行函数  
+//  function completeEventHandler(x,y){ 
+ 
+//     marker = new AMap.Marker({  
+//         map:map,  
+//         //draggable:true, //是否可拖动  
+//         position:new AMap.LngLat(x,y),//基点位置  
+//         icon:"http://webapi.amap.com/images/car.png",
+//         offset:new AMap.Pixel(-26,-13), //相对于基点的位置  
+//         autoRotation:true  
+//     });        
+//     var lngX ;  
+//     var latY ;         
+//     lineArr = new Array();   
+
+//      for(var i = 0;i<pointList.length;i++){
+//         lngX = pointList[i].lng;
+//         latY = pointList[i].lat;
+//         lineArr.push(new AMap.LngLat(lngX,latY));
+//      }
+//     //绘制轨迹  
+//     var polyline = new AMap.Polyline({  
+//         map:map,  
+//         path:lineArr,  
+//         strokeColor:"#00A",//线颜色  
+//         strokeOpacity:1,//线透明度  
+//         strokeWeight:3,//线宽  
+//         strokeStyle:"solid",//线样式  
+//     });  
+// }  
+// function startRun(){  //开始绘制轨迹
+//     x=pointList[0].lng;
+//     y=pointList[0].lat
+//     completeEventHandler(x,y);
+//     marker.moveAlong(lineArr,300);     //开始轨迹回放
+// }
+// function init(){
+
+//    startRun();   
+// }      
+// $(document).ready(function(){
+// 	init();
+
+// }); 
+
+
+//PathSimplifier是一个轨迹展示
+AMapUI.load(['ui/misc/PathSimplifier'], function(PathSimplifier) {
+
+    if (!PathSimplifier.supportCanvas) {
+        alert('当前环境不支持 Canvas！');
+        return;
+    }
+
+    //启动页面
+    initPage(PathSimplifier);
+});
+
+function initPage(PathSimplifier) {
+    //创建组件实例
+    var pathSimplifierIns = new PathSimplifier({
+        zIndex: 100,
+        map: map, //所属的地图实例
+        autoSetFitView:true,
+        disableIfSelected: true,
+        getPath: function(pathData, pathIndex) {
+            //返回轨迹数据中的节点坐标信息，[AMap.LngLat, AMap.LngLat...] 或者 [[lng|number,lat|number],...]
+            return pathData.path;
+        },
+        getHoverTitle: function(pathData, pathIndex, pointIndex) {
+            //返回鼠标悬停时显示的信息
+            if (pointIndex >= 0) {
+                //鼠标悬停在某个轨迹节点上
+                return pathData.name + '，点:' + pointIndex + '/' + pathData.path.length;
+            }
+            //鼠标悬停在节点之间的连线上
+            return pathData.name + '，点数量' + pathData.path.length;
+        },
+        renderOptions: {
+            //轨迹线的样式
+            pathLineStyle: {
+                strokeStyle: '#3595F9',
+                lineWidth: 6,
+                dirArrowStyle: true
+            }
+        }
+    });
+
+    //这里构建两条简单的轨迹，仅作示例
+    pathSimplifierIns.setData([{
+        name: '医院',
+        path: [
+            [112.554454,37.77753],
+            [112.555151,37.774246],
+            [112.584248,37.774789],
+            [112.584398,37.805465],
+            [112.573133,37.80482],
+            [112.573045,37.807527],
+            [112.569268,37.80757],
+            [112.568796,37.838893],
+            [112.586413,37.839147],
+            [112.586102,37.845891],
+            [112.566361,37.845925],
+            [112.566661,37.859987],
+            [112.551383,37.85936],
+            [112.551963,37.854617],
+            [112.555031,37.854651]
+        ]
+    }, {
+        name: '饭店',
+        //创建一条包括500个插值点的大地线
+        path:[
+            [112.569579,37.792276],
+            [112.569359,37.792204],
+            [112.569349,37.793752],
+            [112.561897,37.793794],
+            [112.561812,37.817427],
+            [112.560521,37.817425],
+            [112.564853,37.817415],
+            [112.564907,37.823339],
+            [112.569442,37.823563],
+            [112.569201,37.8308],
+            [112.56161,37.830635],
+            [112.56131,37.838922],
+            [112.552539,37.838668],
+            [112.551767,37.859081],
+            [112.580187,37.860224],
+            [112.580201,37.859767]
+        ]
+    }]);
+
+    //创建一个巡航器
+    var navg0 = pathSimplifierIns.createPathNavigator(0, //关联第1条轨迹
+        {
+            //loop: true, //循环播放
+            speed: 1000,
+            pathNavigatorStyle: {
+                width: 24,
+                height: 24,
+                //使用图片
+                content: PathSimplifier.Render.Canvas.getImageContent('https://yyqsxr.github.io/car.png'),
+                strokeStyle: null,
+                fillStyle: null,
+                //经过路径的样式
+                pathLinePassedStyle: {
+                    lineWidth: 6,
+                    strokeStyle: 'black',
+                    dirArrowStyle: {
+                        stepSpace: 15,
+                        strokeStyle: 'red'
+                    }
+                }
+            }
+        });
+
+    navg0.start();
+
+    var navg1 = pathSimplifierIns.createPathNavigator(1, //关联第1条轨迹
+        {
+            //loop: true, //循环播放
+            speed: 1000,
+            pathNavigatorStyle: {
+                width: 24,
+                height: 24,
+                //使用图片
+                content: PathSimplifier.Render.Canvas.getImageContent('https://yyqsxr.github.io/car.png'),
+                strokeStyle: null,
+                fillStyle: null,
+                //经过路径的样式
+                pathLinePassedStyle: {
+                    lineWidth: 6,
+                    strokeStyle: 'yellow',
+                    dirArrowStyle: {
+                        stepSpace: 15,
+                        strokeStyle: 'green'
+                    }
+                }
+            }
+        });
+
+    navg1.start();
+}
+</script>
+</html>

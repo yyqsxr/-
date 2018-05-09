@@ -1,0 +1,24 @@
+.meet_cont{
+    width: 100%;
+    overflow: hidden;
+}
+/* 头部 */
+.meet_date{
+    width: 100%;
+    height: 1.7rem;
+    overflow: hidden;
+    background: #3396FB;
+}
+
+/* 内容 */
+.meet_list{
+    width: 100%;
+    overflow: hidden;
+}
+.per_iocn{
+    width:.8rem;
+    height: .8rem;
+    border-radius: 50%;
+    display: block;
+    margin: .25rem .4rem;
+}

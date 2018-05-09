@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+        <link rel="stylesheet" href="css/static.css">
+        <link rel="stylesheet" href="css/index.css">
+        <script src='js/static.js'></script>
+        <script src='js/jquery.min.js'></script>
+    </head>
+    <body>
+        <div class="guidance">
+            <div class="gui_iocn">
+                <img src="img/banner2.png" alt="" width="100%">
+            </div>
+            <div id="treeView"></div>
+			<iframe frameborder="0" id="ifm" name="Iframe1" src="particulars.html" width="500px" height="500">
+			您的浏览器不支持嵌入式框架，或者当前配置为不显示嵌入式框架。
+			</iframe>
+            <button style="width:50px;height:50px;" type="button" name="button" id="bbt"></button>
+        </div>
+
+        <script src='js/data.js'></script>
+        <script src='js/tools.js'></script>
+        <script src='js/handledata.js'></script>
+        <script src='js/index.js'></script>
+    </body>
+    <script type="text/javascript">
+        $(function(){
+            $('#bbt').click(function(event) {
+                $('#ifm').attr('src','www.baidu.com')
+            });
+        })
+    </script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+        <link rel="stylesheet" href="../css/static.css">
+        <link rel="stylesheet" href="../css/rs/index.css">
+        <script type="text/javascript" src="../js/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="rsgl_index">
+            <!-- 总人数 -->
+            <div class="rdgl_hIcon">
+                <img src="../img/rs/index.png" alt="">
+                <div class="rdgl_cricle">
+                    <h2>532</h2>
+                    <span>总人数</span>
+                </div>
+            </div>
+
+            <!-- 选择人员类型 -->
+            <div class="rdgl_check">
+                <a class="rdgl_chele fl" href="./mjList.html">
+                    <img src="../img/rs/icomj.png" alt="">
+                    <span>正式民警</span>
+                </a>
+                <a class="rdgl_cheri ri" href="./mjList.html">
+                    <img src="../img/rs/icoitem.png" alt="">
+                    <span>临时人员</span>
+                </a>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        $(function(){
+            //加载完毕时动态改变rem
+            reSize();
+            $('body').css('height',screen.height);
+        })
+        function reSize(){
+            var deviceWidth = screen.width;
+            if(deviceWidth>750) deviceWidth = 750;
+            document.documentElement.style.fontSize = deviceWidth/7.5 +'px';
+        }
+        window.addEventListener('resize',function(){
+            reSize();
+        });
+    </script>
+</html>

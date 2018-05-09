@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+        <link rel="stylesheet" href="../css/static.css">
+        <link rel="stylesheet" href="../css/survey/list.css">
+        <script type="text/javascript" src="../js/jquery.min.js"></script>
+        <script type="text/javascript" src="../js/highcharts/highcharts.js"></script>
+    </head>
+    <body style="background: #E3F4FE;">
+        <div class="list_cont">
+            <!-- 统计图 -->
+            <div class="list_chart">
+                <h2>20561</h2>
+                <div id="chart"  style="min-width:300px; height: 300px; margin: 0 auto">
+                </div>
+            </div>
+
+            <div class="text_area">
+                <p>您还！非常感谢您对公司食堂管理的投票，我们将会认真总结分析，并加以改进，努力把食堂工作做的更好。</p>
+                <p>感谢您的支持！</p>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        $(function(){
+            //页面加载完改变font-size
+            reSize();
+        })
+        function reSize(){
+            var deviceWidth = screen.width;
+            if(deviceWidth>750) deviceWidth = 750;
+            document.documentElement.style.fontSize = deviceWidth/7.5 +'px';
+        }
+        window.addEventListener('resize',function(){
+            reSize();
+        });
+
+
+        //统计图
+        $('#chart').highcharts({
+            chart: {
+                type: 'column'
+            },
+            colors: ['#00aaee'],
+            credits: {
+                enabled: false
+            },
+            title: {
+                text: '员工餐厅满意度统计图',
+                align:'center',
+                style: {'fontSize': '14px', 'font-family': 'Microsoft YaHei'}
+            },
+            subtitle: {
+                text: ''
+            },
+            tooltip: {
+                enabled: false
+            },
+            plotOptions: {
+                column : {
+                    borderWidth: 0,
+                    pointWidth: 45
+                },
+                // 统计图点击事件
+                series: {
+                    cursor: 'pointer',
+                    point: {
+                        events: {
+                            click: function () {
+                                window.location.href = "./info.html?Category="+this.category+"&value="+this.y
+                            }
+                        }
+                    }
+                }
+            },
+            xAxis: {
+                lineColor: 'white',
+                tickColor: '#ffffff',
+                categories: ['全部','较差','一般','较好','满意'],
+                crosshair: true
+            },
+            yAxis: [
+              {  gridLineColor: '#f2f2f2',
+                  min: 0,
+                  title: {
+                      text: null
+                  }
+              }, {
+                  title: {
+                      text: null
+                  },
+                  opposite: true
+            }],
+            legend: {
+                enabled: false
+            },
+            series: [{
+                dataLabels: {
+                    enabled: true
+                },
+                maxPointWidth: 20,
+                data: [
+                    {
+                        color:'#3295FA',
+                        y:650
+                    },
+                    {
+                        color: '#FB7677',
+                        y: 90
+                    },
+                    {
+                        color: '#F2CD39',
+                        y: 400
+                    },
+                    {
+                        color: '#01BD8A',
+                        y: 590
+                    },
+                    {
+                        color: '#1E98DB',
+                        y: 220
+                    }
+                ]
+            }]
+        });
+    </script>
+</html>

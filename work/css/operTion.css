@@ -1,0 +1,66 @@
+.operTion{
+	width: 100%;
+	overflow: hidden;
+}
+.oper_head{
+	width: 100%;
+	padding: .3rem 0;
+	display: flex;
+	justify-content:center;
+	align-items: center;
+	flex-direction: row;
+
+}
+#per_img{
+	width: 1.2rem;
+	height: 1.2rem;
+	border-radius: .6rem;
+	display: inline-flex;
+}
+#userName{
+	font-size: .26rem;
+	font-weight: bold;
+}
+.oper_tit{
+	padding-top: 0;
+}
+.meet_list{
+	margin-top: .2rem;
+}
+.list_dt{
+    background: #fff;
+    color: #333;
+    width: 92%;
+	padding: 0 4%;
+    height: 1.1rem;
+    line-height: 1.1rem;
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    position: relative;
+    border-bottom: 1px solid #ccc;
+}
+.list_dt:hover{
+    background: #fff;
+}
+.list_dt:hover ._after{
+    display: block;
+    width: 3px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #4285F4;
+}
+.list_dt_icon{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -10px;
+    display: block;
+    width: .4rem;
+    height: .4rem;
+    background: url("../images/off.png") no-repeat;
+    background-size: cover;
+}
